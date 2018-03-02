@@ -1,4 +1,5 @@
 #map {    
+    display: inline-block;
     margin: auto;
     height: 75%;
     width: 75%;
@@ -14,4 +15,9 @@ html, body {
     width: 100px;
     height: 150px;
     font-weight: bold; 
+}
+
+.weather{
+    vertical-align: top;
+    display: inline-block;
 }
