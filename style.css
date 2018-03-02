@@ -1,6 +1,5 @@
 #map {    
     display: inline-block;
-    margin: auto;
     height: 75%;
     width: 75%;
 }
@@ -18,6 +17,7 @@ html, body {
 }
 
 .weather{
+    width: 24%;
     vertical-align: top;
     display: inline-block;
 }
