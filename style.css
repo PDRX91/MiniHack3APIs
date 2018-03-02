@@ -1,9 +1,27 @@
+<<<<<<< HEAD
 
 #map {
     height: 100%;
 }
+=======
+#map {    
+    margin: auto;
+    height: 75%;
+    width: 75%;
+}
+/* Optional: Makes the sample page fill the window. */
+>>>>>>> a6556e132633f1b01c5f7398f4ff375380dc2149
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
+=======
+}
+
+.info{
+    width: 100px;
+    height: 150px;
+    font-weight: bold; 
+>>>>>>> a6556e132633f1b01c5f7398f4ff375380dc2149
 }
