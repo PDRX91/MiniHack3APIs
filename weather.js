@@ -1,7 +1,4 @@
-$(document).ready(start);
-function start(){
-    showWeather();
-}
+
 
 function showWeather(){
     // var latlong = $(".latlong").val();

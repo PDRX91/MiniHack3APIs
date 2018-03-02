@@ -5,6 +5,7 @@ var service;
 var infowindow;
 
 function initialize() {
+    showWeather();
   var pyrmont = new google.maps.LatLng(33.6348792,-117.7426695,17);
 
   map = new google.maps.Map(document.getElementById('map'), {
