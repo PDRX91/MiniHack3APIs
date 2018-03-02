@@ -1,13 +1,35 @@
-$(document).ready(initialize);
+$(document).ready(function(){
+
+    
+    var geocoder = new google.maps.Geocoder();
+    $(".showWeather").click(function(){
+        var address = $(".latlong").val();
+        geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == 'OK') {
+              lat = results[0].geometry.location.lat();
+              long =results[0].geometry.location.lng();
+              initialize(lat,long);
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
+          });
+    
+    });
+
+    initialize(33.6348792,-117.7426695);
+});
 
 var map;
 var service;
 var infowindow;
 var origin;
+var lat;
+var long;
 
-function initialize() {
+function initialize(lat,long) {
+    
     showWeather();
-  origin = new google.maps.LatLng(33.6348792,-117.7426695);
+  origin = new google.maps.LatLng(lat,long);
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: origin,
