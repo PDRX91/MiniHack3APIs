@@ -9,8 +9,49 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <source href="streetview.js">
+        <style type="stylesheet" href="style.css"></style>
+    <!-- <script src="main.js"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO50FtyWDn9jKIWtj_vjOmqWZZ4MA_XPU&callback=initMap"
+        async defer></script>
 </head>
 <body>
-
+    
+    <div id="map">
+        <script>
+                 
+          function initMap() {
+            var chicago = {lat: 41.85, lng: -87.65};
+            var losAngeles = {lat: 34.0201613, lng: -118.6919205};
+    
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: chicago,
+              zoom: 7
+            });
+    
+            var directionsDisplay = new google.maps.DirectionsRenderer({
+              map: map
+            });
+    
+            // Set destination, origin and travel mode.
+            var request = {
+              destination: losAngeles,
+              origin: chicago,
+              travelMode: 'DRIVING'
+            };
+    
+            // Pass the directions request to the directions service.
+            var directionsService = new google.maps.DirectionsService();
+            directionsService.route(request, function(response, status) {
+              if (status == 'OK') {
+                // Display the route on the map.
+                directionsDisplay.setDirections(response);
+              }
+            });
+          }
+    
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO50FtyWDn9jKIWtj_vjOmqWZZ4MA_XPU&callback=initMap"
+        async defer></script>
+    </div>
 </body>
 </html>
